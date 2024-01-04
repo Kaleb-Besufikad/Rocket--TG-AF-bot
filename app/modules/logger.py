@@ -49,6 +49,6 @@ console_handler.setLevel(logging.DEBUG)
 console_handler.setFormatter(ColorFormatter())
 
 # Create logger
-logger = logging.getLogger("main")
+logger = logging.getLogger("__init__")
 logger.setLevel(logging.DEBUG)
 logger.addHandler(console_handler)

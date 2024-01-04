@@ -40,10 +40,10 @@ menu_keyboard = [
     ]
 
 submit_keyboard = [
-    [{'📩 Submit': 'submit'}, {'❌ Cancel': 'menu'}]
+    [{'📩 Submit': 'submit'}, {'❌ Cancel': 'cancel'}]
 ]
 confirm_keyboard = [
-        [{'✅ Confirm': 'confirm'}, {'❌ Cancel': 'menu'}]
+        [{'✅ Confirm': 'confirm'}, {'❌ Cancel': 'cancel'}]
 ]
 
 

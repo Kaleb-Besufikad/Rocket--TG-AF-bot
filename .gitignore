@@ -143,9 +143,10 @@ cython_debug/
 *session*
 
 # JSON files
-*.json
+# *.json
 
 # Blocked images folder
 blocked_img/
 
 trash/
+*/downloads/

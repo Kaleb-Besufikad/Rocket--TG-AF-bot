@@ -1,4 +1,4 @@
 Pyrogram
 sewar
 opencv-python
-deep_translator
+TgCrypto
