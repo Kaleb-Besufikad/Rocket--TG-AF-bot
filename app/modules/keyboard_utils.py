@@ -12,26 +12,27 @@ from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 
 client_keyboard = [
     [{"📱 Client type 1": "select_client_0"},
-    {"⚒️ Client type 2": "select_client_1"}],
-    [{"💊 Client type 3": "select_client_2"},
-    {"👔 Client type 4": "select_client_3"}]
+    {"⚒️ Test Clients": "select_client_1"}
+    ],
+    #[{"💊 Client type 3": "select_client_2"},
+    #{"👔 Client type 4": "select_client_3"}]
 ]
 
 # ONLY IN DAYS
 duration_keyboard = [
+    [{'1 Day': 'select_duration_1_days' }],
     [{'15 Days': 'select_duration_15_days'},
     {'1 Month': 'select_duration_30_days'}],
-    [{'2 Months': 'select_duration_60_days'},
-    {'3 Months': 'select_duration_90_days'}]
+    
 ]
 
 # ONLY IN HOURS
 interval_keyboard = [
-    [{'Every 12 Minutes': 'select_interval_0.2_hours'},
-    {'Every 30 Minutes': 'select_interval_0.5_hours'}],
-    [{'Every 1 Hour': 'select_interval_1_hours'},
-    {'Every 6 Hours': 'select_interval_6_hours'}],
-    [{'Once Per Day': 'select_interval_24_hours'}]
+    [{'Every 2 Minutes': 'select_interval_0.0333_hours'},
+    {'Every 15 Minutes': 'select_interval_0.25_hours'}],
+    [{'Every 30 Hour': 'select_interval_0.5_hours'},
+    {'Every 1 Hour': 'select_interval_1_hours'}],
+    [{'Every 2 Hours': 'select_interval_2_hours'}],
 ]
 
 menu_keyboard = [

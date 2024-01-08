@@ -12,7 +12,6 @@
 
 from pathlib import Path
 from typing import List
-from cv2 import imread
 from pyrogram import Client
 
 from modules import Bot, logger

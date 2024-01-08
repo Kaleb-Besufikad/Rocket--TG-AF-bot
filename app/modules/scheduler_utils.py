@@ -53,7 +53,8 @@ async def send_message_job(bot: Client, client: Client, ad_message, channel_id, 
         elif 'text' in ad_message:
             await client.send_message(channel_id, ad_message['text'])
 
-        logger.info(
-            f' ✔️ sent "{ad_message}" FROM {client.api_id} to channel {channel_id}')
+        # logger.info(
+        #     f' ✔️✔️✔️ FROM {client.api_id} to channel {channel_id}')
     except Exception as e:
         logger.error(str(e))
+        logger.error(f"PROBLEM WITH {client.api_id} sending to {channel_id}")

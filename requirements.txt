@@ -2,3 +2,4 @@ Pyrogram
 sewar
 opencv-python
 TgCrypto
+apscheduler

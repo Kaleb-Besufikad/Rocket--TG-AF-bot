@@ -330,17 +330,18 @@ def schedule_message(user_id, message_id):
     client_type = data['client_type']  # TODO: remember to choose client types.
 
     now = datetime.datetime.now()
-    end_date = now + datetime.timedelta(seconds=duration)
+    end_date = now + datetime.timedelta(days=duration)
     logger.info(f'Ends on :{end_date}')
     # scheduler = AsyncIOScheduler()
-    for channel_id in TARGET_CHANNELS:
+    for channel_id in TARGET_CHANNELS[client_type]:
+        print(f"registering {ad_message} to {channel_id}")
         for user in users:
             random_number = randint(10, 99)
             id = f'{datetime.datetime.timestamp(now)}_{channel_id}_{user.api_id}_{random_number}'
             scheduler.add_job(
                 send_message_job,
                 'interval',
-                seconds=interval,
+                hours=interval,
                 end_date=end_date,
                 id=id,
                 args=[bot, user, ad_message, channel_id, data, end_date])
@@ -369,7 +370,7 @@ def load_jobs_from_file(scheduler: AsyncIOScheduler, filePath: Path):
             scheduler.add_job(
                 send_message_job,
                 'interval',
-                seconds=job_data['data']['interval'],
+                hours=job_data['data']['interval'],
                 end_date=end_date,
                 id=job_data['id'],
                 args=[
