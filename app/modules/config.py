@@ -36,7 +36,7 @@ class Bot:
                 json.dump(self.bot, f, indent=4, ensure_ascii=False)
             exit(1)
 
-        with open(config_dir/"bot.json", "r") as f:
+        with open(config_dir/"test_bot.json", "r") as f:
             return json.load(f)
             # load= json.load(f)
             # return load
@@ -54,7 +54,7 @@ class Bot:
                 json.dump(self.user, f, indent=4, ensure_ascii=False)
             # exit(1)
 
-        with open(config_dir/"users.json", "r") as f:
+        with open(config_dir/"test_users.json", "r") as f:
             return json.load(f)
             # load= json.load(f)
             # return load

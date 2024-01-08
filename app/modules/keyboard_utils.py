@@ -12,39 +12,45 @@ from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 
 client_keyboard = [
     [{"📱 Client type 1": "select_client_0"},
-    {"⚒️ Test Clients": "select_client_1"}
-    ],
-    #[{"💊 Client type 3": "select_client_2"},
-    #{"👔 Client type 4": "select_client_3"}]
+     {"⚒️ Client type 2": "select_client_1"}
+     ],
+    [{"💊 Client type 3": "select_client_2"},
+     {"👔 Client type 4": "select_client_3"}],
+    [{"⚒️ Test Clients": "select_client_-1"}]
 ]
 
 # ONLY IN DAYS
 duration_keyboard = [
-    [{'1 Day': 'select_duration_1_days' }],
+
+    [{'1 Day': 'select_duration_1_days'}],
+    [{'3 Day Free-Trial': 'select_duration_3_days'}],
     [{'15 Days': 'select_duration_15_days'},
-    {'1 Month': 'select_duration_30_days'}],
-    
+     {'1 Month': 'select_duration_30_days'}],
+    # TEST DURATION
+    [{'1 minute': 'select_duration_0.000694_days'}],
 ]
 
 # ONLY IN HOURS
 interval_keyboard = [
     [{'Every 2 Minutes': 'select_interval_0.0333_hours'},
-    {'Every 15 Minutes': 'select_interval_0.25_hours'}],
+     {'Every 15 Minutes': 'select_interval_0.25_hours'}],
     [{'Every 30 Hour': 'select_interval_0.5_hours'},
-    {'Every 1 Hour': 'select_interval_1_hours'}],
+     {'Every 1 Hour': 'select_interval_1_hours'}],
     [{'Every 2 Hours': 'select_interval_2_hours'}],
+    #  TEST INTERVAL
+    [{'Every 30 sec': 'select_interval_0.00833_hours'}],
 ]
 
 menu_keyboard = [
-        [{"➕ Create Advertisement": "new"}],
+    [{"➕ Create Advertisement": "new"}],
     # [{"🔥 See Ads": "ads"}], #TODO: show all advertisements to admins
-    ]
+]
 
 submit_keyboard = [
     [{'📩 Submit': 'submit'}, {'❌ Cancel': 'cancel'}]
 ]
 confirm_keyboard = [
-        [{'✅ Confirm': 'confirm'}, {'❌ Cancel': 'cancel'}]
+    [{'✅ Confirm': 'confirm'}, {'❌ Cancel': 'cancel'}]
 ]
 
 

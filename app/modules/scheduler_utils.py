@@ -31,12 +31,12 @@ async def send_message_job(bot: Client, client: Client, ad_message, channel_id, 
             for media_item in media_group:
                 if media_item['type'] == 'photo':
                     file_id = media_item['media']
-                    loaded_media_data = await bot.download_media(file_id)
+                    loaded_media_data = await bot.download_media(file_id, in_memory=True)
                     media_data.append(InputMediaPhoto(
                         media=loaded_media_data, caption=media_item['caption']))
                 elif media_item['type'] == 'video':
                     file_id = media_item['media']
-                    loaded_media_data = await bot.download_media(file_id)
+                    loaded_media_data = await bot.download_media(file_id, in_memory=True)
                     media_data.append(InputMediaVideo(
                         media=loaded_media_data, caption=media_item['caption']))
 
@@ -44,11 +44,11 @@ async def send_message_job(bot: Client, client: Client, ad_message, channel_id, 
 
         elif 'vid' in ad_message:
             logger.warning(f"Attempting to send video")
-            video_data = await bot.download_media(ad_message['vid'])
+            video_data = await bot.download_media(ad_message['vid'], in_memory=True)
             await client.send_video(channel_id, video_data, caption=ad_message['text'])
         elif 'img' in ad_message:
             logger.warning(f"Attempting to send image")
-            photo_data = await bot.download_media(ad_message['img'])
+            photo_data = await bot.download_media(ad_message['img'], in_memory=True)
             await client.send_photo(channel_id, photo_data, caption=ad_message['text'])
         elif 'text' in ad_message:
             await client.send_message(channel_id, ad_message['text'])
